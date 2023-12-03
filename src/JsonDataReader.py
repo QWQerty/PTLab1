@@ -10,10 +10,10 @@ class JsonDataReader(DataReader):
             with open(path, 'r', encoding='utf-8') as file:
                 data = json.load(file)
         except FileNotFoundError:
-            print(f"Error: Файл не найден путь: {path}")
+            print(f"Error: File not found at path: {path}")
             return None
         except Exception as e:
-            print(f"Error: Невозможно прочесть файл: {e}")
+            print(f"Error: Unable to read the file. Reason: {e}")
             return None
 
         students = data.get('students', [])
